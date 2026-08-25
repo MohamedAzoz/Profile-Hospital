@@ -1,0 +1,81 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "[ngClass]",
+    "[class]",
+    "class:list"
+  ],
+  "tailwindCSS.experimental.classRegex": ["class:list", "ngClass", "[ngClass]", "[class]", "class"],
+  "files.autoSave": "afterDelay",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.experimental.configFile": "src/styles.css",
+  "angular.enable-strict-mode-prompt": false,
+
+  "i18n-ally.localesPaths": ["public/i18n"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.enabledFrameworks": ["transloco"],
+  "i18n-ally.displayLanguage": "ar",
+  "i18n-ally.extract.parsers.html": {
+    "attributes": [
+      "text",
+      "title",
+      "alt",
+      "placeholder",
+      "transloco",
+      "class",
+      "ngClass",
+      "[ngClass]",
+      "[class]",
+      "class:list",
+      "label",
+      "aria-label"
+    ],
+    "tags": [
+      "div",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "p",
+      "span",
+      "label",
+      "input",
+      "button",
+      "select",
+      "option",
+      "textarea",
+      "a"
+    ],
+    "ignoredTags": ["script", "style"],
+    "vBind": true,
+    "inlineText": true
+  },
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.extract.keyMaxLength": 60,
+  "i18n-ally.refactor.templates": [
+    {
+      "source": "html-attribute",
+      "template": "[{attr}]=\"t('{key}'{args})\"",
+      "include": ["src/**/*.html"],
+      "exclude": ["src/config/**"]
+    },
+    {
+      "source": "html-inline",
+      "template": "{{ t('{key}'{args}) }}",
+      "include": ["src/**/*.html"],
+      "exclude": ["src/config/**"]
+    }
+  ],
+  "i18n-ally.sourceLanguage": "ar"
+}

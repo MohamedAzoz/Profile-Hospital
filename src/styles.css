@@ -1,3 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+  --color-raw-main-bg: var(--raw-main-bg);
+  --color-raw-surface: var(--raw-surface);
+  --color-raw-sidebar-bg: var(--raw-sidebar-bg);
+  --color-raw-primary: var(--raw-primary);
+  --color-raw-accent: var(--raw-accent);
+  --color-raw-text: var(--raw-text);
+  --color-raw-text-muted: var(--raw-text-muted);
+  --color-raw-border: var(--raw-border);
+  --color-raw-success: var(--raw-success);
+  --color-raw-warning: var(--raw-warning);
+  --color-raw-danger: var(--raw-danger);
+}
+
+:root {
+  --raw-main-bg: #eef2f7;
+  --raw-surface: #ffffff;
+  --raw-sidebar-bg: #12214b;
+  --raw-primary: #1d4ed8;
+  --raw-accent: #3b82f6;
+  --raw-text: #1e293b;
+  --raw-text-muted: #64748b;
+  --raw-border: rgba(203, 213, 225, 0.6);
+  --raw-glass-bg: rgba(255, 255, 255, 0.7);
+  --raw-glass-border: rgba(255, 255, 255, 0.4);
+  --raw-success: #16a34a;
+  --raw-warning: #f59e0b;
+  --raw-danger: #dc2626;
+}
+
+html.dark {
+  --raw-main-bg: #0f172a;
+  --raw-surface: #283e63;
+  --raw-sidebar-bg: #272a3d;
+  --raw-primary: #3b82f6;
+  --raw-accent: #60a5fa;
+  --raw-text: #f8fafc;
+  --raw-text-muted: #cbd5e1;
+  --raw-border: rgba(51, 65, 85, 0.8);
+  --raw-glass-bg: rgba(40, 62, 99, 0.65);
+  --raw-glass-border: rgba(255, 255, 255, 0.12);
+  --raw-success: #22c55e;
+  --raw-warning: #fbbf24;
+  --raw-danger: #ef4444;
+}
+
+* {
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+body {
+  background-color: var(--raw-main-bg);
+  color: var(--raw-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.glass {
+  background: var(--raw-glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--raw-glass-border);
+}
+
+.glass-card {
+  background: var(--raw-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--raw-glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(29, 78, 216, 0.2);
+}
+
+/* Custom animated gradient glow background */
+.hero-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.18) 0%, rgba(18, 33, 75, 0) 70%);
+}
+
+.dark .hero-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.25) 0%, rgba(15, 23, 42, 0) 75%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--raw-main-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--raw-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--raw-accent);
+}
