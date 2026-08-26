@@ -15,47 +15,22 @@ import { LanguageService } from '../../services/language.service';
         <div class="flex items-center justify-between h-20">
           <!-- Brand Logo & Title -->
           <div class="flex items-center gap-3">
-            <div
-              class="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-linear-to-tr from-blue-600 via-indigo-600 to-cyan-500 shadow-lg shadow-blue-500/30 text-white font-bold text-xl"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-7 h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2.2"
-                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.595 15.12a2 2 0 00-1.806.547M12 4.5v15m-7.5-7.5h15"
-                />
-              </svg>
-              <span class="absolute -top-1 -right-1 flex h-3 w-3">
-                <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-                ></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
+            <div class="relative flex items-center justify-center h-12 w-auto">
+              <img
+                [src]="themeService.theme() === 'dark' ? '/LogoDark.webp' : '/Logo.webp'"
+                alt="Full Health Logo"
+                class="h-12 w-auto object-contain rounded-full transition-all duration-300 drop-shadow-md hover:scale-105"
+              />
             </div>
 
             <div>
               <div class="flex items-center gap-2">
                 <span
-                  class="text-xl font-extrabold tracking-tight bg-linear-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400"
+                  class="text-sm md:text-xl font-black tracking-tight bg-linear-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400"
                 >
-                  {{ t('nav.brand') }}
-                </span>
-                <span
-                  class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200 border border-blue-300 dark:border-blue-700/50"
-                >
-                  {{ t('nav.tag') }}
+                  Full Health
                 </span>
               </div>
-              <p class="text-xs text-raw-text-muted hidden sm:block">
-                {{ t('nav.systemActive') }}
-              </p>
             </div>
           </div>
 
@@ -65,31 +40,37 @@ import { LanguageService } from '../../services/language.service';
           >
             <a
               href="#hero"
-              class="px-4 py-2 text-sm font-medium rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
               {{ t('nav.home') }}
             </a>
             <a
               href="#capabilities"
-              class="px-4 py-2 text-sm font-medium rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
               {{ t('nav.capabilities') }}
             </a>
             <a
+              href="#screens"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+            >
+              {{ t('nav.screens') }}
+            </a>
+            <a
               href="#modules"
-              class="px-4 py-2 text-sm font-medium rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
               {{ t('nav.modules') }}
             </a>
             <a
               href="#demo"
-              class="px-4 py-2 text-sm font-medium rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
               {{ t('nav.demo') }}
             </a>
             <a
               href="#specs"
-              class="px-4 py-2 text-sm font-medium rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
+              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
               {{ t('nav.specs') }}
             </a>
@@ -118,8 +99,8 @@ import { LanguageService } from '../../services/language.service';
                   d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
                 />
               </svg>
-              <span>{{
-                langService.currentLang() === 'ar' ? 'English (LTR)' : 'العربية (RTL)'
+              <span class="hidden md:block">{{
+                langService.currentLang() === 'ar' ? 'En' : 'ع'
               }}</span>
             </button>
 
@@ -133,7 +114,6 @@ import { LanguageService } from '../../services/language.service';
               "
             >
               @if (themeService.theme() === 'dark') {
-                <!-- Sun Icon -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-5 h-5 text-amber-400"
@@ -149,7 +129,6 @@ import { LanguageService } from '../../services/language.service';
                   />
                 </svg>
               } @else {
-                <!-- Moon Icon -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-5 h-5 text-slate-700"
@@ -209,6 +188,13 @@ import { LanguageService } from '../../services/language.service';
               class="block px-4 py-2.5 text-sm font-medium rounded-lg text-raw-text hover:bg-blue-500/10"
             >
               {{ t('nav.capabilities') }}
+            </a>
+            <a
+              href="#screens"
+              (click)="mobileMenuOpen.set(false)"
+              class="block px-4 py-2.5 text-sm font-medium rounded-lg text-raw-text hover:bg-blue-500/10"
+            >
+              {{ t('nav.screens') }}
             </a>
             <a
               href="#modules"

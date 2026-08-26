@@ -1,6 +1,5 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
-import { LanguageService } from '../../services/language.service';
 
 export interface HealthcareModule {
   id: string;
@@ -17,13 +16,16 @@ export interface HealthcareModule {
   template: `
     <section id="modules" *transloco="let t" class="py-24 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700">
+        <div
+          class="text-center max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-center mb-12"
+        >
+          <span
+            class="px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-700"
+          >
             {{ t('modules.tag') }}
           </span>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-raw-text tracking-tight">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-raw-text tracking-tight">
             {{ t('modules.title') }}
           </h2>
           <p class="text-base sm:text-lg text-raw-text-muted">
@@ -32,10 +34,13 @@ export interface HealthcareModule {
         </div>
 
         <!-- Filter & Search Controls Bar -->
-        <div class="mb-12 flex flex-col md:flex-row items-center justify-between gap-4 glass-card p-4 rounded-3xl border border-raw-border">
-          
+        <div
+          class="mb-12 flex flex-col md:flex-row items-center justify-between gap-4 glass-card p-4 rounded-3xl border border-raw-border"
+        >
           <!-- Tab Category Filters -->
-          <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          <div
+            class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none"
+          >
             <button
               type="button"
               (click)="selectedCategory.set('all')"
@@ -121,31 +126,50 @@ export interface HealthcareModule {
               [placeholder]="t('modules.searchPlaceholder')"
               class="w-full px-4 py-2.5 pl-10 pr-4 rounded-2xl bg-raw-surface text-raw-text text-xs sm:text-sm border border-raw-border focus:outline-none focus:border-blue-500 transition-colors"
             />
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-raw-text-muted absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-raw-text-muted absolute left-3.5 top-1/2 -translate-y-1/2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
             </svg>
           </div>
-
         </div>
 
         <!-- Modules Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           @for (module of filteredModules(); track module.id) {
-            <div class="glass-card p-6 rounded-3xl border border-raw-border flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300">
-              
+            <div
+              class="glass-card p-6 rounded-3xl border border-raw-border flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
+            >
               <div>
                 <!-- Top Badge & Icon -->
                 <div class="flex items-center justify-between mb-5">
-                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md border border-white/20" [class]="module.gradient">
+                  <div
+                    class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md border border-white/20"
+                    [class]="module.gradient"
+                  >
                     {{ module.icon }}
                   </div>
-                  <span class="px-3 py-1 rounded-full text-xs font-extrabold shadow-sm border border-white/10" [class]="module.badgeColor">
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-extrabold shadow-sm border border-white/10"
+                    [class]="module.badgeColor"
+                  >
                     {{ t('modules.' + module.keyPrefix + 'Badge') }}
                   </span>
                 </div>
 
                 <!-- Module Title -->
-                <h3 class="text-xl font-bold text-raw-text group-hover:text-blue-500 transition-colors mb-2">
+                <h3
+                  class="text-xl font-bold text-raw-text group-hover:text-blue-500 transition-colors mb-2"
+                >
                   {{ t('modules.' + module.keyPrefix + 'Title') }}
                 </h3>
 
@@ -162,20 +186,53 @@ export interface HealthcareModule {
                 <!-- Features Bullets -->
                 <div class="space-y-2 border-t border-raw-border/60 pt-4 mb-6">
                   <div class="flex items-center gap-2 text-xs font-medium text-raw-text">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-4 h-4 text-emerald-500 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span>{{ t('modules.' + module.keyPrefix + 'Feat1') }}</span>
                   </div>
                   <div class="flex items-center gap-2 text-xs font-medium text-raw-text">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-4 h-4 text-emerald-500 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span>{{ t('modules.' + module.keyPrefix + 'Feat2') }}</span>
                   </div>
                   <div class="flex items-center gap-2 text-xs font-medium text-raw-text">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-4 h-4 text-emerald-500 shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2.5"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span>{{ t('modules.' + module.keyPrefix + 'Feat3') }}</span>
                   </div>
@@ -189,11 +246,21 @@ export interface HealthcareModule {
                 class="w-full py-3 rounded-2xl bg-raw-surface hover:bg-blue-600 hover:text-white border border-raw-border text-raw-text text-xs font-bold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer group-hover:border-blue-500"
               >
                 <span>{{ t('modules.viewDetails') }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </button>
-
             </div>
           }
         </div>
@@ -201,22 +268,39 @@ export interface HealthcareModule {
         <!-- Detail Modal Popup -->
         @if (activeModalModule()) {
           @let mod = activeModalModule()!;
-          <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-opacity">
-            <div class="glass-card max-w-xl w-full p-8 rounded-3xl border border-raw-border shadow-2xl space-y-6 relative animate-in fade-in zoom-in duration-200">
-              
+          <div
+            class="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md transition-opacity"
+          >
+            <div
+              class="glass-card max-w-xl w-full p-8 rounded-3xl border border-raw-border shadow-2xl space-y-6 relative animate-in fade-in zoom-in duration-200"
+            >
               <!-- Close Button -->
-              <button 
+              <button
                 type="button"
                 (click)="activeModalModule.set(null)"
                 class="absolute top-6 right-6 p-2 rounded-full bg-raw-surface border border-raw-border text-raw-text hover:bg-red-500 hover:text-white transition-colors cursor-pointer"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
 
               <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-lg border border-white/20" [class]="mod.gradient">
+                <div
+                  class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-lg border border-white/20"
+                  [class]="mod.gradient"
+                >
                   {{ mod.icon }}
                 </div>
                 <div>
@@ -234,13 +318,21 @@ export interface HealthcareModule {
               </p>
 
               <div class="bg-blue-500/10 border border-blue-500/20 p-4 rounded-2xl space-y-2">
-                <h4 class="text-xs font-bold text-blue-600 dark:text-blue-300 uppercase tracking-wide">
-                  {{ t('modules.featuresCount') }} (v22 Ready)
+                <h4
+                  class="text-xs font-bold text-blue-600 dark:text-blue-300 uppercase tracking-wide"
+                >
+                  {{ t('modules.featuresCount') }}
                 </h4>
                 <ul class="space-y-1.5 text-xs font-medium text-raw-text">
-                  <li class="flex items-center gap-2">🔹 {{ t('modules.' + mod.keyPrefix + 'Feat1') }}</li>
-                  <li class="flex items-center gap-2">🔹 {{ t('modules.' + mod.keyPrefix + 'Feat2') }}</li>
-                  <li class="flex items-center gap-2">🔹 {{ t('modules.' + mod.keyPrefix + 'Feat3') }}</li>
+                  <li class="flex items-center gap-2">
+                    🔹 {{ t('modules.' + mod.keyPrefix + 'Feat1') }}
+                  </li>
+                  <li class="flex items-center gap-2">
+                    🔹 {{ t('modules.' + mod.keyPrefix + 'Feat2') }}
+                  </li>
+                  <li class="flex items-center gap-2">
+                    🔹 {{ t('modules.' + mod.keyPrefix + 'Feat3') }}
+                  </li>
                 </ul>
               </div>
 
@@ -253,17 +345,14 @@ export interface HealthcareModule {
                   {{ t('modules.closeModal') }}
                 </button>
               </div>
-
             </div>
           </div>
         }
-
       </div>
     </section>
-  `
+  `,
 })
 export class ModulesGridComponent {
-  protected readonly langService = inject(LanguageService);
   protected readonly transloco = inject(TranslocoService);
 
   readonly selectedCategory = signal<string>('all');
@@ -271,16 +360,86 @@ export class ModulesGridComponent {
   readonly activeModalModule = signal<HealthcareModule | null>(null);
 
   readonly modulesList = signal<HealthcareModule[]>([
-    { id: '1', icon: '📊', keyPrefix: 'm1', category: 'admin', badgeColor: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/60 dark:text-indigo-200', gradient: 'bg-gradient-to-tr from-indigo-600 to-purple-600 text-white' },
-    { id: '2', icon: '🏥', keyPrefix: 'm2', category: 'clinical', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200', gradient: 'bg-gradient-to-tr from-blue-600 to-indigo-600 text-white' },
-    { id: '3', icon: '⏱️', keyPrefix: 'm3', category: 'operations', badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200', gradient: 'bg-gradient-to-tr from-amber-500 to-orange-600 text-white' },
-    { id: '4', icon: '📁', keyPrefix: 'm4', category: 'clinical', badgeColor: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-200', gradient: 'bg-gradient-to-tr from-emerald-600 to-teal-600 text-white' },
-    { id: '5', icon: '💊', keyPrefix: 'm5', category: 'operations', badgeColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900/60 dark:text-purple-200', gradient: 'bg-gradient-to-tr from-purple-600 to-pink-600 text-white' },
-    { id: '6', icon: '🧪', keyPrefix: 'm6', category: 'diagnostic', badgeColor: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/60 dark:text-cyan-200', gradient: 'bg-gradient-to-tr from-cyan-600 to-blue-600 text-white' },
-    { id: '7', icon: '🩻', keyPrefix: 'm7', category: 'diagnostic', badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200', gradient: 'bg-gradient-to-tr from-teal-600 to-emerald-600 text-white' },
-    { id: '8', icon: '🩺', keyPrefix: 'm8', category: 'clinical', badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200', gradient: 'bg-gradient-to-tr from-blue-600 to-cyan-600 text-white' },
-    { id: '9', icon: '👥', keyPrefix: 'm9', category: 'admin', badgeColor: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200', gradient: 'bg-gradient-to-tr from-slate-700 to-slate-900 text-white' },
-    { id: '10', icon: '🔔', keyPrefix: 'm10', category: 'operations', badgeColor: 'bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200', gradient: 'bg-gradient-to-tr from-rose-600 to-red-600 text-white' },
+    {
+      id: '1',
+      icon: '📊',
+      keyPrefix: 'm1',
+      category: 'admin',
+      badgeColor: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/60 dark:text-indigo-200',
+      gradient: 'bg-gradient-to-tr from-indigo-600 to-purple-600 text-white',
+    },
+    {
+      id: '2',
+      icon: '🏥',
+      keyPrefix: 'm2',
+      category: 'clinical',
+      badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200',
+      gradient: 'bg-gradient-to-tr from-blue-600 to-indigo-600 text-white',
+    },
+    {
+      id: '3',
+      icon: '⏱️',
+      keyPrefix: 'm3',
+      category: 'operations',
+      badgeColor: 'bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200',
+      gradient: 'bg-gradient-to-tr from-amber-500 to-orange-600 text-white',
+    },
+    {
+      id: '4',
+      icon: '📁',
+      keyPrefix: 'm4',
+      category: 'clinical',
+      badgeColor: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-200',
+      gradient: 'bg-gradient-to-tr from-emerald-600 to-teal-600 text-white',
+    },
+    {
+      id: '5',
+      icon: '💊',
+      keyPrefix: 'm5',
+      category: 'operations',
+      badgeColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900/60 dark:text-purple-200',
+      gradient: 'bg-gradient-to-tr from-purple-600 to-pink-600 text-white',
+    },
+    {
+      id: '6',
+      icon: '🧪',
+      keyPrefix: 'm6',
+      category: 'diagnostic',
+      badgeColor: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/60 dark:text-cyan-200',
+      gradient: 'bg-gradient-to-tr from-cyan-600 to-blue-600 text-white',
+    },
+    {
+      id: '7',
+      icon: '🩻',
+      keyPrefix: 'm7',
+      category: 'diagnostic',
+      badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200',
+      gradient: 'bg-gradient-to-tr from-teal-600 to-emerald-600 text-white',
+    },
+    {
+      id: '8',
+      icon: '🩺',
+      keyPrefix: 'm8',
+      category: 'clinical',
+      badgeColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200',
+      gradient: 'bg-gradient-to-tr from-blue-600 to-cyan-600 text-white',
+    },
+    {
+      id: '9',
+      icon: '👥',
+      keyPrefix: 'm9',
+      category: 'admin',
+      badgeColor: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200',
+      gradient: 'bg-gradient-to-tr from-slate-700 to-slate-900 text-white',
+    },
+    {
+      id: '10',
+      icon: '🔔',
+      keyPrefix: 'm10',
+      category: 'operations',
+      badgeColor: 'bg-red-100 text-red-700 dark:bg-red-900/60 dark:text-red-200',
+      gradient: 'bg-gradient-to-tr from-rose-600 to-red-600 text-white',
+    },
   ]);
 
   readonly filteredModules = computed(() => {
@@ -288,7 +447,7 @@ export class ModulesGridComponent {
     const query = this.searchQuery().toLowerCase().trim();
     const allMods = this.modulesList();
 
-    return allMods.filter(m => {
+    return allMods.filter((m) => {
       const matchCat = cat === 'all' || m.category === cat;
       const title = this.transloco.translate(`modules.${m.keyPrefix}Title`).toLowerCase();
       const desc = this.transloco.translate(`modules.${m.keyPrefix}Desc`).toLowerCase();

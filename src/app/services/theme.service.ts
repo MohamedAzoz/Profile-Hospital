@@ -5,25 +5,30 @@ export type ThemeMode = 'light' | 'dark';
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
   private readonly STORAGE_KEY = 'pulsecare_theme';
-  
-  readonly theme = signal<ThemeMode>(this.getInitialTheme());
+
+  theme = signal<ThemeMode>(this.getInitialTheme());
 
   constructor() {
     effect(() => {
       const currentTheme = this.theme();
       localStorage.setItem(this.STORAGE_KEY, currentTheme);
-      
+
       const rootElement = document.documentElement;
       if (currentTheme === 'dark') {
         rootElement.classList.add('dark');
       } else {
         rootElement.classList.remove('dark');
       }
+
+      const favicon = document.getElementById('app-favicon') as HTMLLinkElement | null;
+      if (favicon) {
+        favicon.href = currentTheme === 'dark' ? 'LogoDark.webp' : 'Logo.webp';
+      }
     });
   }
 
   toggleTheme(): void {
-    this.theme.update(current => (current === 'dark' ? 'light' : 'dark'));
+    this.theme.update((current) => (current === 'dark' ? 'light' : 'dark'));
   }
 
   setTheme(mode: ThemeMode): void {

@@ -21,25 +21,25 @@ import { TranslocoDirective } from '@jsverse/transloco';
           </p>
         </div>
 
-        <!-- Tech Badges Strip -->
+        <!-- Capability Badges Strip -->
         <div class="flex flex-wrap items-center justify-center gap-3 mb-16">
           <span class="px-4 py-2 rounded-2xl glass border border-blue-500/30 text-xs font-extrabold text-blue-600 dark:text-blue-300 shadow-sm flex items-center gap-2">
-            ⚡ Angular v22.1 Standalone
+            🛡️ حماية البيانات وتشفير HIPAA
           </span>
           <span class="px-4 py-2 rounded-2xl glass border border-emerald-500/30 text-xs font-extrabold text-emerald-600 dark:text-emerald-300 shadow-sm flex items-center gap-2">
-            📡 Signals Driven State
+            📡 تزامن سحابي ومحلي فوري
           </span>
           <span class="px-4 py-2 rounded-2xl glass border border-indigo-500/30 text-xs font-extrabold text-indigo-600 dark:text-indigo-300 shadow-sm flex items-center gap-2">
-            🚀 Zoneless Change Detection
+            🚀 استجابة فائقة السرعة
           </span>
           <span class="px-4 py-2 rounded-2xl glass border border-cyan-500/30 text-xs font-extrabold text-cyan-600 dark:text-cyan-300 shadow-sm flex items-center gap-2">
-            🎨 Tailwind CSS v4 Theme
+            🎨 واجهة مستخدم فاخرة
           </span>
           <span class="px-4 py-2 rounded-2xl glass border border-purple-500/30 text-xs font-extrabold text-purple-600 dark:text-purple-300 shadow-sm flex items-center gap-2">
-            🌐 Transloco RTL/LTR i18n
+            🌐 ثنائية اللغة (عربي / English)
           </span>
           <span class="px-4 py-2 rounded-2xl glass border border-amber-500/30 text-xs font-extrabold text-amber-600 dark:text-amber-300 shadow-sm flex items-center gap-2">
-            💾 Offline-First IndexedDB
+            💾 جاهزية التشغيل بدون إنترنت
           </span>
         </div>
 
@@ -54,7 +54,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.frameworkVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              Zero NgModule overhead, pure standalone component architecture.
+              ربط سلس وسريع بين المستشفيات والفروع المختلفة.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.stateVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              Fine-grained reactivity graph without RxJS boilerplate.
+              تحديث البيانات تلقائياً للشاشات والأجهزة.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.architectureVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              0ms change detection runtime overhead with microtask batching.
+              ضمان استمرار العمل حتى في حال انقطاع الشبكة.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.stylingVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              Class-based dark mode, raw theme variables, and glassmorphism.
+              مظهر عصري يدعم الوضعين الداكن والفاتح.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.i18nVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              Dynamic Arabic RTL & English LTR switching on the fly.
+              تبديل فوري للغة والاتجاه حسب رغبة المستخدم.
             </p>
           </div>
 
@@ -114,7 +114,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
               {{ t('specs.storageVal') }}
             </div>
             <p class="text-xs text-raw-text-muted">
-              100% offline resilience for uninterrupted clinic operations.
+              أعلى درجات الخصوصية وحفظ ملفات المرضى.
             </p>
           </div>
 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,16 +14,16 @@ import { TranslocoDirective } from '@jsverse/transloco';
           <!-- Column 1: Brand Info -->
           <div class="md:col-span-2 space-y-4">
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-linear-to-tr from-blue-600 to-cyan-500 text-white font-bold text-lg shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L5.595 15.12a2 2 0 00-1.806.547M12 4.5v15m-7.5-7.5h15" />
-                </svg>
-              </div>
-              <span class="text-xl font-extrabold bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                {{ t('nav.brand') }}
+              <img 
+                [src]="themeService.theme() === 'dark' ? '/LogoDark.webp' : '/Logo.webp'" 
+                alt="Full Health Logo" 
+                class="h-10 w-auto object-contain drop-shadow-sm"
+              />
+              <span class="text-xl font-black bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                Full Health
               </span>
-              <span class="px-2 py-0.5 text-xs font-semibold rounded bg-blue-500/10 text-blue-600">
-                v22.1 Ready
+              <span class="px-2.5 py-0.5 text-xs font-bold rounded-full bg-blue-500/10 text-blue-600 border border-blue-500/20">
+                Enterprise Edition
               </span>
             </div>
 
@@ -39,23 +40,24 @@ import { TranslocoDirective } from '@jsverse/transloco';
             <ul class="space-y-2 text-xs font-medium text-raw-text-muted">
               <li><a href="#hero" class="hover:text-blue-500 transition-colors">{{ t('nav.home') }}</a></li>
               <li><a href="#capabilities" class="hover:text-blue-500 transition-colors">{{ t('nav.capabilities') }}</a></li>
+              <li><a href="#screens" class="hover:text-blue-500 transition-colors">{{ t('nav.screens') }}</a></li>
               <li><a href="#modules" class="hover:text-blue-500 transition-colors">{{ t('nav.modules') }}</a></li>
               <li><a href="#demo" class="hover:text-blue-500 transition-colors">{{ t('nav.demo') }}</a></li>
               <li><a href="#specs" class="hover:text-blue-500 transition-colors">{{ t('nav.specs') }}</a></li>
             </ul>
           </div>
 
-          <!-- Column 3: Tech Badges -->
+          <!-- Column 3: System Roles Badges -->
           <div class="space-y-3">
             <h4 class="text-sm font-bold text-raw-text uppercase tracking-wider">
               {{ t('footer.techBadges') }}
             </h4>
             <div class="flex flex-wrap gap-2 text-[11px] font-semibold text-raw-text-muted">
-              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">Angular Signals</span>
-              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">Zoneless</span>
-              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">Tailwind CSS v4</span>
-              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">Transloco i18n</span>
-              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">IndexedDB</span>
+              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">🩺 بوابة الطبيب</span>
+              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">💊 صيدلية ومخزون</span>
+              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">👤 بوابة المريض</span>
+              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">🩺 المساعد الطبي</span>
+              <span class="px-2.5 py-1 rounded-lg bg-raw-surface border border-raw-border">🧪 المختبر والأشعة</span>
             </div>
           </div>
 
@@ -68,7 +70,7 @@ import { TranslocoDirective } from '@jsverse/transloco';
             <span>•</span>
             <span class="hover:text-blue-500 transition-colors">AES-256 Encrypted</span>
             <span>•</span>
-            <span class="hover:text-blue-500 transition-colors">Enterprise SLA 99.99%</span>
+            <span class="hover:text-blue-500 transition-colors">24/7 Availability</span>
           </div>
         </div>
 
@@ -76,4 +78,6 @@ import { TranslocoDirective } from '@jsverse/transloco';
     </footer>
   `
 })
-export class FooterComponent {}
+export class FooterComponent {
+  protected readonly themeService = inject(ThemeService);
+}

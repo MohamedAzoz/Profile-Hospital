@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ArchitectureMetricsComponent } from './components/architecture-metrics/architecture-metrics.component';
+import { ScreensShowcaseComponent } from './components/screens-showcase/screens-showcase.component';
 import { ModulesGridComponent } from './components/modules-grid/modules-grid.component';
 import { LivePreviewSimulatorComponent } from './components/live-preview-simulator/live-preview-simulator.component';
 import { TechnicalSpecsComponent } from './components/technical-specs/technical-specs.component';
@@ -15,6 +16,7 @@ import { ThemeService } from './services/theme.service';
     NavbarComponent,
     HeroComponent,
     ArchitectureMetricsComponent,
+    ScreensShowcaseComponent,
     ModulesGridComponent,
     LivePreviewSimulatorComponent,
     TechnicalSpecsComponent,
