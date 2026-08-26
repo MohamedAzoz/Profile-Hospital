@@ -149,7 +149,7 @@
     "m5Title": "Pharmacy & Drug Management",
     "m5Category": "Operations & Services",
     "m5Badge": "E-Prescription",
-    "m5Desc": "Receive digital prescriptions instantly from clinics, dispense medications via barcode, and manage stock batches.",
+    "m5Desc": "Receive digital prescriptions instantly from physicians, dispense prescribed medications seamlessly, and manage stock batches.",
     "m5Feat1": "Instant clinic-to-pharmacy sync",
     "m5Feat2": "Drug interaction & safety alerts",
     "m5Feat3": "Batch tracking & expiry alerts",
@@ -158,7 +158,7 @@
     "m6Category": "Diagnostics & Lab",
     "m6Badge": "Automated Reports",
     "m6Desc": "Specimen sample management, lab analyzer integration for result ingestion, and instant report generation.",
-    "m6Feat1": "Specimen barcode printing & tracking",
+    "m6Feat1": "Specimen logging & tracking",
     "m6Feat2": "Direct analyzer device integration",
     "m6Feat3": "Critical panic value alert system",
 
