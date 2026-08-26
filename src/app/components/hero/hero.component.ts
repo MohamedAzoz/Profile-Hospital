@@ -20,7 +20,7 @@ import { ThemeService } from '../../services/theme.service';
         class="absolute top-1/3 right-10 w-80 h-80 bg-cyan-400/15 dark:bg-cyan-500/20 blur-[110px] rounded-full pointer-events-none"
       ></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Glassmorphism Badge -->
         <div class="flex justify-center mb-8 hero-badge">
           <div
@@ -37,7 +37,7 @@ import { ThemeService } from '../../services/theme.service';
         </div>
 
         <!-- Main Headline & Subtitle -->
-        <div class="text-center max-w-4xl mx-auto space-y-6 hero-content">
+        <div class="text-center flex flex-col max-w-4xl mx-auto space-y-6 hero-content">
           <!-- Logo Display in Hero -->
           <div class="flex justify-center mb-4 hero-logo">
             <img
@@ -48,12 +48,12 @@ import { ThemeService } from '../../services/theme.service';
           </div>
 
           <h1
-            class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight sm:leading-none text-raw-text hero-title"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl flex flex-col font-black tracking-tight leading-tight sm:leading-none text-raw-text hero-title"
           >
             <span>{{ t('hero.titlePrefix') }}</span>
-            <br class="hidden sm:inline" />
+            <br class="hidden sm:flex" />
             <span
-              class="bg-linear-to-r from-blue-600 via-indigo-500 to-cyan-500 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400 bg-clip-text text-transparent underline decoration-blue-500/30 decoration-wavy decoration-2"
+              class="bg-linear-to-r from-blue-600 via-indigo-500 to-cyan-500 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400 bg-clip-text text-transparent"
             >
               {{ t('hero.titleHighlight') }}
             </span>
@@ -88,7 +88,7 @@ import { ThemeService } from '../../services/theme.service';
               <span>{{ t('hero.ctaScreens') }}</span>
             </a>
 
-            <a
+            <!-- <a
               href="#demo"
               class="w-full sm:w-auto px-8 py-4 rounded-2xl glass border border-raw-border text-raw-text hover:border-blue-500 font-bold text-base shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3 cursor-pointer"
             >
@@ -113,7 +113,7 @@ import { ThemeService } from '../../services/theme.service';
                 />
               </svg>
               <span>{{ t('hero.ctaDemo') }}</span>
-            </a>
+            </a> -->
           </div>
         </div>
 

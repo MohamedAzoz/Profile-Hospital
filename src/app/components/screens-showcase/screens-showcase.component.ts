@@ -48,7 +48,7 @@ export interface SystemScreenItem {
 
         <!-- Role Category Filter Tabs -->
         <div
-          class="mb-12 flex items-center justify-center gap-2 overflow-x-auto pb-3 scrollbar-none"
+          class="mb-12 flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none"
         >
           <button
             type="button"
@@ -190,8 +190,8 @@ export interface SystemScreenItem {
                   />
                   <!-- Glass Overlay Badge -->
                   <div
-                    class="absolute top-3 right-3 px-3 py-1 rounded-full glass border border-white/20 text-[11px] font-extrabold shadow-lg"
-                    [class]="item.badgeBg"
+                    class="absolute top-3 right-3 p-1 rounded-full border border-white/20 text-[11px] font-extrabold shadow-lg"
+                    [ngClass]="item.badgeBg"
                   >
                     {{ item.roleLabelAr }}
                   </div>
@@ -237,20 +237,20 @@ export interface SystemScreenItem {
         @if (activeLightboxScreen()) {
           @let screen = activeLightboxScreen()!;
           <div
-            class="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl transition-opacity animate-in fade-in duration-300"
+            class="fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/85 backdrop-blur-xl transition-opacity animate-in fade-in duration-300"
           >
             <div
-              class="glass-card max-w-5xl w-full max-h-[92vh] p-6 sm:p-8 rounded-3xl border border-raw-border shadow-2xl space-y-4 relative overflow-y-auto"
+              class="glass-card max-w-6xl w-full max-h-[95vh] p-4 sm:p-6 md:p-8 rounded-3xl border border-raw-border shadow-2xl space-y-4 relative overflow-y-auto"
             >
               <!-- Modal Close Button -->
               <button
                 type="button"
                 (click)="activeLightboxScreen.set(null)"
-                class="absolute top-6 right-6 z-100 p-2.5 rounded-full bg-raw-surface border border-raw-border text-raw-text hover:bg-rose-600 hover:text-white transition-colors cursor-pointer"
+                class="absolute top-3 right-3 z-100 p-2 rounded-full bg-raw-surface border border-raw-border text-raw-text hover:bg-rose-600 hover:text-white transition-colors cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
+                  class="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -265,30 +265,30 @@ export interface SystemScreenItem {
               </button>
 
               <!-- Modal Header -->
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3 mt-7">
                 <span
-                  class="px-3.5 py-1 rounded-full text-xs font-black text-white"
+                  class="px-3 py-1 rounded-full text-[9px] lg:text-xs font-bold text-white"
                   [class]="screen.badgeBg"
                 >
                   {{ screen.roleLabelAr }}
                 </span>
-                <h3 class="text-2xl font-black text-raw-text">
+                <h3 class="text-base md:text-lg lg:text-xl font-black text-raw-text">
                   {{ t('screens.' + screen.keyPrefix + 'Title') }}
                 </h3>
               </div>
 
-              <p class="text-sm text-raw-text-muted">
+              <p class="text-xs md:text-sm text-raw-text-muted">
                 {{ t('screens.' + screen.keyPrefix + 'Desc') }}
               </p>
 
               <!-- Full High-Res Image Container -->
               <div
-                class="rounded-2xl overflow-hidden border border-raw-border bg-slate-950 p-2 shadow-2xl"
+                class="rounded-2xl overflow-auto w-full border border-blue-500/30 bg-slate-950/90 p-1 sm:p-3 shadow-2xl ring-1 ring-white/10 group/img"
               >
                 <img
                   [src]="'/images/' + screen.imageFileName"
                   [alt]="t('screens.' + screen.keyPrefix + 'Title')"
-                  class="w-full h-auto max-h-[70vh] object-contain rounded-xl"
+                  class="w-full h-auto max-h-[65vh] sm:max-h-[75vh] md:max-h-[80vh] object-contain rounded-xl transition-all duration-300 hover:scale-[1.01]"
                 />
               </div>
 
@@ -379,7 +379,7 @@ export class ScreensShowcaseComponent {
       category: 'pharmacist',
       roleLabelAr: '💊 الصيدلي',
       roleLabelEn: 'Pharmacist Portal',
-      badgeBg: 'bg-purple-600 text-white',
+      badgeBg: 'bg-purple-500 text-white',
     },
     {
       id: '8',
@@ -397,7 +397,7 @@ export class ScreensShowcaseComponent {
       category: 'pharmacist',
       roleLabelAr: '💊 الصيدلي',
       roleLabelEn: 'Pharmacist Portal',
-      badgeBg: 'bg-purple-600 text-white',
+      badgeBg: 'bg-purple-500 text-white',
     },
     {
       id: '10',

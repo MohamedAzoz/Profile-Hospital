@@ -21,24 +21,24 @@ import { TranslocoDirective } from '@jsverse/transloco';
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-raw-text tracking-tight">
             {{ t('capabilities.title') }}
           </h2>
-          <p class="text-base sm:text-lg text-raw-text-muted">
+          <p class="text-sm sm:text-base md:text-lg text-raw-text-muted">
             {{ t('capabilities.subtitle') }}
           </p>
         </div>
 
         <!-- Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <!-- Card 1: Integrated Sync -->
           <div
-            class="glass-card p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-blue-500/50 transition-all"
+            class="glass-card p-6 sm:p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-blue-500/50 transition-all"
           >
-            <div class="flex items-start gap-5">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
               <div
-                class="w-14 h-14 rounded-2xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:scale-110 transition-transform"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-7 h-7"
+                  class="w-6 h-6 sm:w-7 sm:h-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -51,19 +51,19 @@ import { TranslocoDirective } from '@jsverse/transloco';
                   />
                 </svg>
               </div>
-              <div class="space-y-2">
+              <div class="space-y-2 flex-1 w-full">
                 <h3
-                  class="text-xl font-bold text-raw-text group-hover:text-blue-500 transition-colors"
+                  class="text-lg sm:text-xl font-bold text-raw-text group-hover:text-blue-500 transition-colors leading-snug"
                 >
                   {{ t('capabilities.cap1Title') }}
                 </h3>
-                <p class="text-sm text-raw-text-muted leading-relaxed">
+                <p class="text-xs sm:text-sm text-raw-text-muted leading-relaxed">
                   {{ t('capabilities.cap1Desc') }}
                 </p>
                 <div
                   class="pt-2 flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400"
                 >
-                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
                   <span>تزامن لحظي فوري بدون أي تأخير</span>
                 </div>
               </div>
@@ -72,15 +72,15 @@ import { TranslocoDirective } from '@jsverse/transloco';
 
           <!-- Card 2: 24/7 Resilience -->
           <div
-            class="glass-card p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-emerald-500/50 transition-all"
+            class="glass-card p-6 sm:p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-emerald-500/50 transition-all"
           >
-            <div class="flex items-start gap-5">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
               <div
-                class="w-14 h-14 rounded-2xl bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20 group-hover:scale-110 transition-transform"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-7 h-7"
+                  class="w-6 h-6 sm:w-7 sm:h-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -93,19 +93,19 @@ import { TranslocoDirective } from '@jsverse/transloco';
                   />
                 </svg>
               </div>
-              <div class="space-y-2">
+              <div class="space-y-2 flex-1 w-full">
                 <h3
-                  class="text-xl font-bold text-raw-text group-hover:text-emerald-500 transition-colors"
+                  class="text-lg sm:text-xl font-bold text-raw-text group-hover:text-emerald-500 transition-colors leading-snug"
                 >
                   {{ t('capabilities.cap2Title') }}
                 </h3>
-                <p class="text-sm text-raw-text-muted leading-relaxed">
+                <p class="text-xs sm:text-sm text-raw-text-muted leading-relaxed">
                   {{ t('capabilities.cap2Desc') }}
                 </p>
                 <div
                   class="pt-2 flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400"
                 >
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
                   <span>حماية وحفظ البيانات 24/7</span>
                 </div>
               </div>
@@ -114,15 +114,15 @@ import { TranslocoDirective } from '@jsverse/transloco';
 
           <!-- Card 3: RBAC Roles -->
           <div
-            class="glass-card p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-indigo-500/50 transition-all"
+            class="glass-card p-6 sm:p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-indigo-500/50 transition-all"
           >
-            <div class="flex items-start gap-5">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
               <div
-                class="w-14 h-14 rounded-2xl bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-indigo-600/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/20 group-hover:scale-110 transition-transform"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-7 h-7"
+                  class="w-6 h-6 sm:w-7 sm:h-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -135,19 +135,19 @@ import { TranslocoDirective } from '@jsverse/transloco';
                   />
                 </svg>
               </div>
-              <div class="space-y-2">
+              <div class="space-y-2 flex-1 w-full">
                 <h3
-                  class="text-xl font-bold text-raw-text group-hover:text-indigo-500 transition-colors"
+                  class="text-lg sm:text-xl font-bold text-raw-text group-hover:text-indigo-500 transition-colors leading-snug"
                 >
                   {{ t('capabilities.cap3Title') }}
                 </h3>
-                <p class="text-sm text-raw-text-muted leading-relaxed">
+                <p class="text-xs sm:text-sm text-raw-text-muted leading-relaxed">
                   {{ t('capabilities.cap3Desc') }}
                 </p>
                 <div
                   class="pt-2 flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400"
                 >
-                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                  <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
                   <span>توافق كامل مع المعايير الصحية العالمية</span>
                 </div>
               </div>
@@ -156,15 +156,15 @@ import { TranslocoDirective } from '@jsverse/transloco';
 
           <!-- Card 4: Inventory & Prescription -->
           <div
-            class="glass-card p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-cyan-500/50 transition-all"
+            class="glass-card p-6 sm:p-8 rounded-3xl border border-raw-border relative overflow-hidden group hover:border-cyan-500/50 transition-all"
           >
-            <div class="flex items-start gap-5">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
               <div
-                class="w-14 h-14 rounded-2xl bg-cyan-600/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20 group-hover:scale-110 transition-transform"
+                class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-600/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/20 group-hover:scale-110 transition-transform"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-7 h-7"
+                  class="w-6 h-6 sm:w-7 sm:h-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -177,19 +177,19 @@ import { TranslocoDirective } from '@jsverse/transloco';
                   />
                 </svg>
               </div>
-              <div class="space-y-2">
+              <div class="space-y-2 flex-1 w-full">
                 <h3
-                  class="text-xl font-bold text-raw-text group-hover:text-cyan-500 transition-colors"
+                  class="text-lg sm:text-xl font-bold text-raw-text group-hover:text-cyan-500 transition-colors leading-snug"
                 >
                   {{ t('capabilities.cap4Title') }}
                 </h3>
-                <p class="text-sm text-raw-text-muted leading-relaxed">
+                <p class="text-xs sm:text-sm text-raw-text-muted leading-relaxed">
                   {{ t('capabilities.cap4Desc') }}
                 </p>
                 <div
                   class="pt-2 flex items-center gap-2 text-xs font-semibold text-cyan-600 dark:text-cyan-400"
                 >
-                  <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                  <span class="w-2 h-2 rounded-full bg-cyan-500 shrink-0"></span>
                   <span>إدارة وإشراف دوائي متكامل</span>
                 </div>
               </div>

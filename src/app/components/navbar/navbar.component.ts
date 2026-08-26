@@ -63,12 +63,6 @@ import { LanguageService } from '../../services/language.service';
               {{ t('nav.modules') }}
             </a>
             <a
-              href="#demo"
-              class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
-            >
-              {{ t('nav.demo') }}
-            </a>
-            <a
               href="#specs"
               class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full text-raw-text hover:bg-raw-surface hover:shadow-sm transition-all"
             >
@@ -202,13 +196,6 @@ import { LanguageService } from '../../services/language.service';
               class="block px-4 py-2.5 text-sm font-medium rounded-lg text-raw-text hover:bg-blue-500/10"
             >
               {{ t('nav.modules') }}
-            </a>
-            <a
-              href="#demo"
-              (click)="mobileMenuOpen.set(false)"
-              class="block px-4 py-2.5 text-sm font-medium rounded-lg text-raw-text hover:bg-blue-500/10"
-            >
-              {{ t('nav.demo') }}
             </a>
             <a
               href="#specs"

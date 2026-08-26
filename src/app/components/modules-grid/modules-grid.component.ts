@@ -410,7 +410,7 @@ export class ModulesGridComponent {
     },
     {
       id: '7',
-      icon: '🩻',
+      icon: '👨‍⚕️',
       keyPrefix: 'm7',
       category: 'diagnostic',
       badgeColor: 'bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200',

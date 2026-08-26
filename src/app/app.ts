@@ -18,7 +18,7 @@ import { ThemeService } from './services/theme.service';
     ArchitectureMetricsComponent,
     ScreensShowcaseComponent,
     ModulesGridComponent,
-    LivePreviewSimulatorComponent,
+    // LivePreviewSimulatorComponent,
     TechnicalSpecsComponent,
     FooterComponent,
   ],
